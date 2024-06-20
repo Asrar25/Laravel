@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product;
@@ -14,21 +15,15 @@ use App\Models\Product;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/home',function(){
-    return view('layout.layoutdesign',[
-        'title'=>'Welcome To All',
-        'body'=>'Product Table',
-        'details'=>Product::listall()
-    ]);
-});
+Route::get('/home',[DataController::class,'GetAllProduct']);
+Route::get('/product/{name}',[DataController::class,'FindProduct']);
+Route::get('/layout',function(){return view('layout.layoutdesign');});
+Route::get('/addproductpage',[DataController::class,'DataIndex']);
+Route::post('/addproduct',[DataController::class,'DataInsert']);
+Route::get('/editproduct/{name}',[DataController::class,'editproduct']);
 
-Route::get('/product/{name}',function($name){
-    return view('getproduct',[
-    'product'=>Product::findproduct($name)
-]);
-});
 
-Route::get('/layout',function(){
-    return view('layout.layoutdesign');
-});
+
+
+
 ?>

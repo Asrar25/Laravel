@@ -34,7 +34,7 @@
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <div style="background-color:blue;height:80px;">
+    <div style=" background:linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);height:80px;">
     <h2 style="text-align:center">ProdZ</h2><a class="btn btn-primary" href="/home" role="button" style="position: absolute;
   right: 50px;top:20px;">Back</a>
     </div>
@@ -55,7 +55,7 @@
                 <tbody>
             <tr>
                 <td class="w-25">{{$product['id']}}</td>
-                <td><img src="/{{$product['image']}}" style="heigth:100px;width:100px;"/></td>
+                <td><img src="/images/{{$product['image']}}" style="heigth:100px;width:100px;"/></td>
                 <td>{{$product['product_name']}}</td>
                 <td>{{$product['model']}}</td>
                 <td>{{$product['price']}}</td>
